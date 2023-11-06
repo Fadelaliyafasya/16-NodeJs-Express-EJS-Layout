@@ -1,0 +1,26 @@
+    <%- include('layout/nav.ejs') %>
+    <%- include('layout/header.ejs') %>
+    <br />
+      <h1
+      class="container mx-auto px-4 lg:max-w-7xl py-24 text-center md:text-left "
+      >
+        Daftar Kontak
+      </h1>
+    <br />
+
+      <% if (isEmpty) { %>
+        <h3
+          class="container mx-auto px-4 lg:max-w-7xl py-24 text-center md:text-left"
+        >
+          Contact Tidak Tersedia!!
+        </h3>
+        <% } else { %>
+        <ul>
+          <% contacts.forEach(contact => { %>
+          <li><h6>Nama: <%= contact.nama %></h6></li>
+          <li><h6>Nomor HP: <%= contact.mobile %></h6></li>
+          <br />
+          <% }); %>
+          </ul>
+          <% } %>
+    <%- include('layout/footer.ejs') %>
